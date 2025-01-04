@@ -55,12 +55,24 @@ int main()
         }
     }
     
-    cout<<"work"<<endl;
-    cout<<numLines<<endl;
-    cout<<left[0]<<endl;
-    cout<<total<<endl;
-
     read.close();
+    // part two
 
+    int score = 0;
+    int totalScore = 0;
+
+    for (int i = 0; i<1000; i++)
+    {
+        int appears = 0;
+        for (int j = 0; j<1000; j++)
+        {
+            if (left[i] == right[j]) {
+                appears++;
+            }
+        }
+        score = appears * left[i];
+        totalScore += score;
+    }
+    cout<<totalScore<<endl;
     return 0;
 } 
